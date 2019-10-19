@@ -1,5 +1,5 @@
 const major = 0;
-const minor = 1;
+const minor = 2;
 const patch = 0;
 const semVersion = {
     Version: `version@v${major}.${minor}.${patch}`,

@@ -13,3 +13,7 @@ export function GetVersion(): version.ISemanticVersioning {
 export function Ping(): boolean {
     return true;
 }
+
+export function Hello(): string {
+    return `Hello, Deno module!`
+}
