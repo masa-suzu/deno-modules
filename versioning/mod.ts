@@ -1,26 +1,28 @@
 const major = 0;
-const minor = 4;
+const minor = 5;
 const patch = 0;
-const moduleName = "versioning";
 
-export const Version = MakeModuleVersion(moduleName, major, minor, patch);
+export const Version = GetVersion(major, minor, patch);
 
 export interface IModule {
     Version: string
+    Name: string;
     Major: number;
     Minor: number;
     Patch: number;
 }
 
-export function MakeModuleVersion(
-    moduleName: string,
+export function GetVersion(
     major: number,
     minor: number,
-    patch: number): IModule {
-    return {
-        Version: `${moduleName}@v${major}.${minor}.${patch}`,
-        Major: major,
-        Minor: minor,
-        Patch: patch,
+    patch: number): (s: string) => IModule {
+    return (moduleName) => {
+        return {
+            Version: `${moduleName}@v${major}.${minor}.${patch}`,
+            Name: moduleName,
+            Major: major,
+            Minor: minor,
+            Patch: patch,
+        };
     };
 }

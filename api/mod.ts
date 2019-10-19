@@ -1,6 +1,6 @@
 import * as versioning from "../versioning/mod.ts";
 
-export const Version = versioning.MakeModuleVersion("api", 0, 4, 0);
+export const Version = versioning.Version("api");
 
 export function Ping(): boolean {
     return true;
