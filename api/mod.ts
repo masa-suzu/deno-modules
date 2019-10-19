@@ -1,8 +1,6 @@
-import * as version from "../version/mod.ts";
+import * as versioning from "../versioning/mod.ts";
 
-export function GetModuleVersion(): version.IModule {
-    return version.MakeModuleVersion("api");
-}
+export const Version = versioning.MakeModuleVersion("api", 0, 4, 0);
 
 export function Ping(): boolean {
     return true;
